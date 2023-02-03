@@ -1,6 +1,5 @@
 
 https://www.youtube.com/watch?v=FV57K4s_B14&list=PL53JxaGwWUqCr3xm4qvqbgpJ4Xbs4lCs7&index=16&ab_channel=Josh%27sDevBox
-1:13:38
 
 Next.JS
 - The React Framework for Production
@@ -119,4 +118,40 @@ $ cat crypto-info/package.json
  "dependencies": {
      "swr": "1.3.0"
 $ npm install
-$ cat crypto-info/pages/price/client/Bitcoin.tsx
+$ cat crypto-info/pages/price/client/bitcoin.tsx
+http://localhost:3000/price/client/bitcoin
+
+API Routes
+Next.JS comes with the capability to build backend API's
+Req - the data that the API caller send to you
+Res - the response object that you want to send back to the API caller
+Implement Dynamic API Routes
+Goal:
+- Write a dynamic API routes that takes in the name of the crypto to make a price request to Messari and return the value
+ ex: api/price/btc, and api/price/eth
+- Create a new page to call this API instead
+$ cat crypto-info/pages/api/price/[coin].ts
+$ cat crypto-info/pages/price/client/bitcoinGet.tsx
+http://localhost:3000/price/client/bitcoinGet
+
+Implement API Routes that accepts payloads
+Goal:
+- Write a POST request that takes a crypto name in the body to make a price request to Messari and return the value : /api/price
+$ cat crypto-info/pages/api/price.ts
+$ cat crypto-info/pages/price/client/bitcoinPost.tsx
+http://localhost:3000/price/client/bitcoinPost
+
+Conclusion
+- Learned what Next.JS is
+- Explored alternative frontend framework solutions
+- Setup a new Next.JS project
+- Page routing
+- Next.JS html and css modules
+- Different rendering/data fetching strategies
+ 1. Static Site Generation(SSG)
+ 2. Incremental Static Regeneration(ISR)
+ 3. Server Side Rendering(SSR)
+ 4. Client Side Data Fetching
+- API Routes:
+ 1. Dynamic
+ 2. POST requests with payload
